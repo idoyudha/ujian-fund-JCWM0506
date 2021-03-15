@@ -12,10 +12,13 @@
     <input type="number" name="fibo" id="fibo" placeholder="masukkan angka"><br><br>
     <input type="button" value="SHOW" onclick="show()"><input type="button" value="GANJIL" onclick="ganjil()"><input type="button" value="GENAP" onclick="genap()"><br><br>
 
-    <h1>RESULT:</h1>
-    <div id="result">
+    <h1>
+        RESULT:
+        <div id="result">
 
-    </div>
+        </div>
+    </h1>
+    
 </body>
 <script>
     let n1 = 0
@@ -37,7 +40,7 @@
         let fibonacciFinal = fibonacci.slice(0, index)
         console.log(fibonacciFinal)
         
-        document.getElementById('result').innerHTML = fibonacciFinal
+        document.getElementById('result').innerHTML = fibonacciFinal.join(', ')
         document.getElementById('fibo').value = null
         fibonacci = fibonacciFinal
     }
@@ -47,7 +50,7 @@
         console.log(listGanjil)
         const reducer = (a, b) => a + b 
         let totalGanjil = listGanjil.reduce(reducer)
-        document.getElementById('result').innerHTML = `${listGanjil.join('+')} = ${totalGanjil}`
+        document.getElementById('result').innerHTML = `${listGanjil.join(' + ')} = ${totalGanjil}`
     }
 
     function genap() {
@@ -55,7 +58,7 @@
         console.log(listGenap)
         const reducer = (a, b) => a + b 
         let totalGenap = listGenap.reduce(reducer)
-        document.getElementById('result').innerHTML = `${listGenap.join('+')} = ${totalGenap}`
+        document.getElementById('result').innerHTML = `${listGenap.join(' + ')} = ${totalGenap}`
     }
 </script>
 </html>
